@@ -22,8 +22,8 @@ const JsonLdData = (post: PostInterface) => ({
     "image": {
     "@type": "imageObject",
     "url": `https://hackernoon.com/${Object.keys(post?.images || defaultImage)[0]}`,
-    "height": post.images[Object.keys(post?.images || defaultImage)[0]].height,
-    "width": post.images[Object.keys(post?.images || defaultImage)[0]].width
+    "height": post?.images?.[Object.keys(post?.images || defaultImage)[0]]?.height,
+    "width": post?.images?.[Object.keys(post?.images || defaultImage)[0]]?.width
     },
     "publisher": {
     "@type": "Organization",
