@@ -13,6 +13,7 @@ import RelatedStories from "../components/RelatedStories";
 import StoryTags from "../components/StoryTags"
 import StoryTopbar from "../components/StoryTopbar"
 import React from "react";
+import StoryHead from "../components/StoryHead";
 
 interface PostComponentInterface extends PostInterface {
   notFound: boolean;
@@ -24,6 +25,7 @@ function Post(props: PostComponentInterface) {
 
   return (
     <>
+      <StoryHead post={props}/>
       <StoryTopbar title={title} profile={profile} />
       <Container>
         <StoryLayout>
