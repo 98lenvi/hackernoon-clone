@@ -2,6 +2,13 @@ import { PostInterface } from "../../interfaces";
 import Head from "../Head";
 import { BrandLogo } from "../../assets"
 
+const defaultImage = {
+    "hn-logo.png" : {
+        width: 100,
+        height: 100
+    }
+}
+
 const JsonLdData = (post: PostInterface) => ({
     "@context": "http://schema.org",
     "@type": "TechArticle",
@@ -14,9 +21,9 @@ const JsonLdData = (post: PostInterface) => ({
     "headline": post?.title,
     "image": {
     "@type": "imageObject",
-    "url": `https://hackernoon.com/${Object.keys(post.images)[0]}`,
-    "height": post.images[Object.keys(post.images)[0]].height,
-    "width": post.images[Object.keys(post.images)[0]].width
+    "url": `https://hackernoon.com/${Object.keys(post?.images || defaultImage)[0]}`,
+    "height": post.images[Object.keys(post?.images || defaultImage)[0]].height,
+    "width": post.images[Object.keys(post?.images || defaultImage)[0]].width
     },
     "publisher": {
     "@type": "Organization",
