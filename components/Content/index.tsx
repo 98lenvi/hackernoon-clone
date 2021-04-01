@@ -28,7 +28,12 @@ function Content({ markup }) {
 
             return (
                 <>
-                    <ContentParagraph onMouseEnter={() => setMouseEnter(true)} onMouseLeave={() => setMouseEnter(false)} >{children}</ContentParagraph>
+                    <ContentParagraph 
+                        onMouseEnter={() => setMouseEnter(true)} 
+                        onMouseLeave={() => setMouseEnter(false)} 
+                        onTouchStart={() => setMouseEnter(true)}
+                        onTouchEnd={() => setMouseEnter(false)}
+                        >{children}</ContentParagraph>
                     <InlineReactions overallScore={overallScore} sentimentScoreArray={sentimentScoreArray} mouseEnter={mouseEnter} />
                 </>
             );
