@@ -42,6 +42,7 @@ function StoryHead({
     post: PostInterface
 }) {
     return (<Head>
+        <title>{post?.title}</title>
         <meta name="description" content={post?.excerpt}></meta>
         <meta property="og:title" content={post?.title}></meta>
         <meta property="og:description" content={post?.excerpt}></meta>
